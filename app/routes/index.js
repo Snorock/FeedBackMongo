@@ -24,5 +24,8 @@ router.get('/feedback', (req, res) => {
 router.get('/thankyou', (req, res) => {
   control.thankyou(req, res)
 });
+router.get('/registration', (req, res) => {
+  control.registration(req, res)
+});
 
 module.exports = router;

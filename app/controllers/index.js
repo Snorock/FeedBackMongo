@@ -11,3 +11,6 @@ module.exports.feedback = function (req, res) {
 module.exports.thankyou = function (req, res) {
   res.render('thankyou');
 }
+module.exports.registration = function (req, res) {
+  res.render('registration');
+}
