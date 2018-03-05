@@ -26,7 +26,7 @@ router.get('/thankyou', (req, res) => {
 router.get('/registration', (req, res) => {
   control.registration(req, res)
 }).post('/registration', (req, res) => {
-  control.register(req,res);
+  control.register(req, res);
 });
 
 module.exports = router;
