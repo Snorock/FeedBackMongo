@@ -8,6 +8,19 @@ let expressSession = require('express-session');
 
 let index = require('../app/routes/index'); // define the main route
 
+// import mongoose
+let mongoose = require('mongoose');
+//URI
+let DB = require('./db');
+//point mongoose to connect to URI
+mongoose.connect(process.env.URI || DB.URI);
+let mongoDB = mongoose.connection;
+
+mongoDB.on('error', console.error.bind(console, 'connection error'));
+mongoDB.once('open', () =>{
+  console.log("Connected to MongoDB...");
+});
+
 let app = express();
 
 // view engine setup

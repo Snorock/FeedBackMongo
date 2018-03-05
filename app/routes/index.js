@@ -4,14 +4,13 @@ let router = express.Router();
 //require  controller
 const control = require('../controllers/index.js');
 
+
 /* GET home page. */
 router.get('/', (req, res) => {
   control.index(req, res)
 }).post('/feedback', (req, res) => {
   let ses = req.session;
   if (req.body.lg_username != null && req.body.lg_username != '') {
-
-    ses.login = req.body.lg_username;
     control.feedback(req, res)
   }
 });

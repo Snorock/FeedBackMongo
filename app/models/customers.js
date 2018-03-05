@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
-const CustomerSchema = new Schema({
+let CustomerSchema = mongoose.Schema({
 
     username: {
         type: String,
@@ -32,22 +32,24 @@ const CustomerSchema = new Schema({
     date: Date,
     subject: String,
     feedback: String
+},{
+    collection: "customers"
 });
 
-CustomerSchema.statics.findOneByUsername = function(username, callback) {
-	// Use the 'findOne' method to retrieve a user document
-	this.findOne({
-		username: new RegExp(username, 'i')
-	}, callback);
-};
+// CustomerSchema.statics.findOneByUsername = function(username, callback) {
+// 	// Use the 'findOne' method to retrieve a user document
+// 	this.findOne({
+// 		username: new RegExp(username, 'i')
+// 	}, callback);
+// };
 
-CustomerSchemaUserSchema.methods.authenticate = function(password) {
-	return this.password === password;
-};
+// CustomerSchema.methods.authenticate = function(password) {
+// 	return this.password === password;
+// };
 
-CustomerSchema.set('toJSON', {
-	getters: true,
-	virtuals: true
-});
+// CustomerSchema.set('toJSON', {
+// 	getters: true,
+// 	virtuals: true
+// });
 
-mongoose.model('Customer', CustomerSchema);
+module.exports = mongoose.model('customers', CustomerSchema);
