@@ -6,14 +6,14 @@ let CustomerSchema = mongoose.Schema({
     username: {
         type: String,
         // Trim the 'username' field
-        trim: true,
+        //trim: true,
         // Set a unique 'username' index
         unique: true,
         // Validate 'username' value existance
         required: true
     },
-    firstName: String,
-    lastName: String,
+    firstname: String,
+    lastname: String,
     email: {
         type: String,
         // Set an email index
