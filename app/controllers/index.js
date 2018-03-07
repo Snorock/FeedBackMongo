@@ -44,7 +44,19 @@ module.exports.register = function (req, res) {
   cust.save((err) => {
     if (err) {
       return console.error(err);
+    } else {
+      res.render('index');
     }
   });
-  res.render('index');
+}
+module.exports.allcustomers = function (req, res) {
+  customers.find((err, custs) => {
+    if (err) {
+      return console.error(err);
+    } else {
+      res.render('allcustomers',{
+        custs: custs
+      });
+    }
+  })
 }

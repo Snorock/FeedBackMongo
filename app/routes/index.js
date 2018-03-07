@@ -28,5 +28,8 @@ router.get('/registration', (req, res) => {
 }).post('/registration', (req, res) => {
   control.register(req, res);
 });
+router.get('/allcustomers', (req,res) => {
+  control.allcustomers(req,res);
+});
 
 module.exports = router;

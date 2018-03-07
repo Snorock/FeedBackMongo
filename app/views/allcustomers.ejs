@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Igor Brovchenko Lab1 Login</title>
+    <!-- CSS Section -->
+    <link rel='stylesheet' href='./Content/app.css' />
+    <link rel='stylesheet' href='./bootstrap/dist/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+
+<body>
+
+    <div class="text-center" style="padding:50px 0">
+        <div class="logo">List of Customers</div>
+        <div class="etc-login-form">
+            <p>
+                <a href="/">Back to login</a>
+            </p> </div>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Feedback</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% for ( let count = 0; count < custs.length; count++) { %>
+                  <tr>                    
+                    <td><%= custs[count].username %></td>
+                    <td><%= custs[count].firstname %></td>
+                    <td><%= custs[count].lastname %></td>
+                    <td><%= custs[count].email %></td>
+                    <td><%= custs[count].date %></td>
+                    <td><%= custs[count].subject %></td>
+                    <td><%= custs[count].feedback %></td>
+                  </tr>
+                 <% } %>
+                </tbody>
+              </table>
+
+    </div>
+
+
+
+
+    </div>
+
+    <!-- JavaScript Section -->
+    <script src="./jquery/dist/jquery.min.js"></script>
+    <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="./Scripts/core/app.js"></script>
+
+</body>
+
+</html>
